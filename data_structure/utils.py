@@ -1,12 +1,13 @@
-def displayDictKeys(dictObj):
-  text = ""
-  no = 1
-  for key in dictObj.keys():
-    text += f"{no}. {key}\n"
-    no += 1
-  return text
+from variables import subjects, grades
 
-def displayMatkulDetails(dict_user_matkul, dict_matkul, dict_nilai):
-  for matkul in dict_user_matkul.keys():
-    print(f"Matkul: {matkul}\nSKS: {dict_matkul[matkul]}\nNilai: {dict_user_matkul[matkul].upper()}/{dict_nilai[dict_user_matkul[matkul]]}")
+def display_subjects():
+  no = 1
+  print("Daftar Mata Kuliah:")
+  for key in subjects.keys():
+    print(f"{no}. {key}")
+    no += 1
+
+def display_user_subjects(user_subjects):
+  for subject in user_subjects.keys():
+    print(f"Nama\t: {subject}\nSKS\t: {subjects[subject]}\nNilai\t: {user_subjects[subject].upper()}/{grades[user_subjects[subject]]}")
     print()

@@ -1,9 +1,11 @@
-def calculateIPK(dict_user_matkul, dict_matkul, dict_nilai):
+from variables import subjects, grades
+
+def calculateIPK(dict_user_matkul):
   total_sks = 0
-  total_nilai = 0
+  scores = 0
 
   for matkul in dict_user_matkul.keys():
-    total_sks += dict_matkul[matkul]
-    total_nilai += dict_nilai[dict_user_matkul[matkul]] * dict_matkul[matkul]
+    total_sks += subjects[matkul]
+    scores += grades[dict_user_matkul[matkul]] * subjects[matkul]
 
-  return total_nilai / total_sks
+  return scores / total_sks
